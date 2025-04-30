@@ -6,7 +6,7 @@ class VectorStore:
         """
         Initialize the persistent vector store with disk saving.
         """
-        self.client = chromadb.PersistentClient(path=persist_path)  # 注意这里是 path=
+        self.client = chromadb.PersistentClient(path=persist_path)
 
         if collection_name in [c.name for c in self.client.list_collections()]:
             self.collection = self.client.get_collection(name=collection_name)
