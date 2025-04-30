@@ -27,19 +27,16 @@ def build_vector_store(data_path: str = "data.json", persist_path: str = "vector
     if not os.path.exists(persist_path):
         os.makedirs(persist_path)
 
-    # 只初始化一次！
     store = VectorStore(persist_path=persist_path)
 
-    # 加数据
     assert len(embeddings) == len(texts) == len(metadatas) == len(ids), \
         f"Length mismatch: embeddings={len(embeddings)}, texts={len(texts)}, metadatas={len(metadatas)}, ids={len(ids)}"
 
     store.add_documents(embeddings, texts, metadatas, ids)
 
-    # 添加后再检查一次collection数量
     print("After add, VectorStore document count:", store.collection.count())
 
-    store.save()  # save可以是空的pass（1.x自动持久化）
+    store.save()
 
     print(f"Vector store successfully built and saved at '{persist_path}'.")
 
