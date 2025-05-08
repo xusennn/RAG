@@ -1,4 +1,4 @@
-Retrieval-Augmented Generation (RAG) for Tourism Recommendation
+Retrieval-Augmented Generation (RAG) for Tourism Recommendation (self learn)
 
 This project is a modular Retrieval-Augmented Generation (RAG) system that provides travel-related answers based on user questions. It uses both ChromaDB and FAISS as interchangeable vector database backends and supports semantic search with large pre-trained embedding models.
 
